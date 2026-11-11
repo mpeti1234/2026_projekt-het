@@ -1,0 +1,408 @@
+
+/* ALAPBEÁLLÍTÁSOK */
+
+:root {
+    --bg: #080d1b;
+    --panel: #111a30;
+    --text: #f2f5ff;
+    --muted: #a5b1ca;
+    --blue: #6c8cff;
+    --cyan: #42e3dc;
+    --purple: #a77bff;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+
+/* NAVIGÁCIÓ */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    background: #080d1bee;
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #26324d;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 7%;
+}
+
+.logo {
+    font-weight: bold;
+    color: var(--cyan);
+    font-size: 19px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+
+/* NYITÓOLDAL */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 90px 9%;
+
+    background:
+        radial-gradient(
+            ellipse at 80% 35%,
+            #384b9b55,
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 20% 80%,
+            #25c8b522,
+            transparent 40%
+        );
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.tag {
+    color: var(--cyan);
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(40px, 7vw, 76px);
+    line-height: 1.12;
+    margin: 25px 0;
+}
+
+.gradient {
+    background: linear-gradient(
+        90deg,
+        var(--cyan),
+        #8295ff,
+        var(--purple)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+p {
+    color: var(--muted);
+}
+
+
+/* GOMB */
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 25px;
+    margin-top: 20px;
+
+    background: linear-gradient(
+        100deg,
+        #647fff,
+        #9b72ff
+    );
+
+    color: white;
+    text-decoration: none;
+
+    border: none;
+    border-radius: 9px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: transform 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* SZEKCIÓK */
+
+section {
+    padding: 85px 9%;
+    scroll-margin-top: 65px;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.section-intro {
+    max-width: 700px;
+    margin-bottom: 35px;
+}
+
+.dark-section {
+    background: #0d1426;
+}
+
+
+/* KÁRTYÁK */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 20px;
+}
+
+.card {
+    background: var(--panel);
+
+    border: 1px solid #283652;
+
+    padding: 25px;
+    border-radius: 16px;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyan);
+}
+
+.card .icon {
+    font-size: 32px;
+}
+
+.card h3 {
+    color: white;
+}
+
+
+/* IDÉZET */
+
+.quote {
+    padding: 35px;
+
+    border-left: 4px solid var(--cyan);
+
+    background: #131e34;
+
+    border-radius: 0 14px 14px 0;
+
+    font-size: 21px;
+
+    margin-top: 30px;
+}
+
+
+/* IDŐVONAL */
+
+.timeline {
+    border-left: 2px solid var(--blue);
+    padding-left: 25px;
+}
+
+.timeline-item {
+    margin: 30px 0;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -32px;
+    top: 8px;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+}
+
+
+/* TÁBLÁZAT */
+
+.table-container {
+    overflow-x: auto;
+}
+
+.compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+.compare th,
+.compare td {
+    padding: 16px;
+    text-align: left;
+
+    border-bottom: 1px solid #29354d;
+}
+
+.compare th {
+    color: var(--cyan);
+}
+
+.compare tbody tr:hover {
+    background: #131e34;
+}
+
+
+/* KVÍZ */
+
+.quiz-box {
+    max-width: 750px;
+
+    background: var(--panel);
+
+    padding: 30px;
+
+    border: 1px solid #344363;
+    border-radius: 18px;
+}
+
+#question-number {
+    color: var(--cyan);
+    font-weight: bold;
+}
+
+#question {
+    margin: 20px 0;
+}
+
+.option {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px;
+    margin: 12px 0;
+
+    background: #1b2942;
+
+    border: 1px solid #344363;
+    border-radius: 9px;
+
+    color: white;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.option:hover:not(:disabled) {
+    border-color: var(--cyan);
+    background: #243654;
+}
+
+.option:disabled {
+    cursor: default;
+    opacity: 0.8;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+
+/* LÁBLÉC */
+
+footer {
+    text-align: center;
+
+    padding: 40px;
+
+    color: var(--muted);
+
+    background: #060a14;
+}
+
+
+/* MOBILNÉZET */
+
+@media (max-width: 650px) {
+
+    nav {
+        padding: 12px 4%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 65px 7%;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+
+    .section-title {
+        font-size: 29px;
+    }
+
+    .compare {
+        font-size: 13px;
+    }
+
+    .quiz-box {
+        padding: 20px;
+    }
+
+}
